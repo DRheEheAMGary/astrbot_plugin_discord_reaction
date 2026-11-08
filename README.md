@@ -7,6 +7,8 @@
 - 自动反应：按「回复表情倾向」滑块决定是否处理新消息
 - 模型选表情：命中后由当前 LLM 根据消息内容选择 emoji
 - LLM 工具：`discord_react`，模型可自己选择表情和消息
+- 监听别人添加/移除的 reaction，并注入模型上下文
+- 工具：`discord_get_reactions`，可查询频道或指定消息的 reaction
 - 频道冷却、最短消息长度、跳过指令、只回应 @Bot
 - 表情池可配置
 
@@ -28,3 +30,6 @@ AstrBot/data/plugins/astrbot_plugin_discord_reaction/
 - `mention_only`：只对 @Bot 的消息反应
 - `tool_enabled`：是否提供 `discord_react` 工具
 - `emoji_pool`：逗号分隔的候选表情
+- `reaction_listen_enabled`：是否监听别人的 reaction
+- `reaction_context_enabled`：是否把最近 reaction 注入模型上下文
+- `reaction_context_limit`：每个频道保留多少条 reaction

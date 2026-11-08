@@ -62,6 +62,29 @@
     "type": "bool",
     "default": true
   },
+  "reaction_listen_enabled": {
+    "description": "监听别人的 reaction",
+    "hint": "记录其他用户对消息添加/移除的表情，供模型理解对话氛围。",
+    "type": "bool",
+    "default": true
+  },
+  "reaction_context_enabled": {
+    "description": "注入 reaction 上下文",
+    "hint": "把最近收到的 reaction 注入模型上下文；关闭后仍可用 discord_get_reactions 查询。",
+    "type": "bool",
+    "default": true
+  },
+  "reaction_context_limit": {
+    "description": "保留 reaction 条数",
+    "hint": "每个 Discord 频道保留并注入最近多少条 reaction 记录。",
+    "type": "int",
+    "default": 10,
+    "slider": {
+      "min": 1,
+      "max": 30,
+      "step": 1
+    }
+  },
   "provider_id": {
     "description": "选表情使用的模型",
     "hint": "留空则使用当前会话默认模型。",
