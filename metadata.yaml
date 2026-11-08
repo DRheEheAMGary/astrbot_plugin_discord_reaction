@@ -1,0 +1,7 @@
+name: astrbot_plugin_discord_reaction
+display_name: Discord 表情反应
+desc: 让 Bot 自己挑选表情，对 Discord 消息做出 reaction；支持自动反应倾向滑块和 LLM 工具。
+version: 1.0.0
+author: DRheEheAMGary
+repo: https://github.com/DRheEheAMGary/astrbot_plugin_discord_reaction
+astrbot_version: ">=4.20.0"

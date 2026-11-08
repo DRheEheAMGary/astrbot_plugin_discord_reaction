@@ -1,0 +1,78 @@
+{
+  "enabled": {
+    "description": "启用插件",
+    "hint": "关闭后自动反应和 LLM 工具都不会工作。",
+    "type": "bool",
+    "default": true
+  },
+  "auto_enabled": {
+    "description": "自动反应",
+    "hint": "在 Discord 收到消息时，按下面的倾向滑块自动决定是否添加表情。",
+    "type": "bool",
+    "default": true
+  },
+  "tendency": {
+    "description": "回复表情倾向",
+    "hint": "0 = 从不自动反应，100 = 每条符合条件的新消息都尝试。实际还会受冷却时间限制。",
+    "type": "int",
+    "default": 30,
+    "slider": {
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  },
+  "cooldown_seconds": {
+    "description": "频道冷却时间（秒）",
+    "hint": "同一个 Discord 频道两次自动反应之间至少间隔多少秒，避免刷屏。",
+    "type": "int",
+    "default": 15,
+    "slider": {
+      "min": 0,
+      "max": 300,
+      "step": 5
+    }
+  },
+  "min_message_length": {
+    "description": "最短消息长度",
+    "hint": "消息太短时不自动反应，按字符数计算。",
+    "type": "int",
+    "default": 2,
+    "slider": {
+      "min": 0,
+      "max": 50,
+      "step": 1
+    }
+  },
+  "skip_commands": {
+    "description": "跳过指令",
+    "hint": "以 / 或 ! 开头的消息不自动反应。",
+    "type": "bool",
+    "default": true
+  },
+  "mention_only": {
+    "description": "只回应 @Bot 的消息",
+    "hint": "开启后只对提到机器人的消息自动添加表情。",
+    "type": "bool",
+    "default": false
+  },
+  "tool_enabled": {
+    "description": "提供 LLM 工具",
+    "hint": "允许模型通过 discord_react 工具自己选择表情并添加 reaction。",
+    "type": "bool",
+    "default": true
+  },
+  "provider_id": {
+    "description": "选表情使用的模型",
+    "hint": "留空则使用当前会话默认模型。",
+    "type": "string",
+    "_special": "select_provider",
+    "default": ""
+  },
+  "emoji_pool": {
+    "description": "可选表情池",
+    "hint": "用逗号分隔。自动反应会从这里挑选，工具也可以使用这些表情。",
+    "type": "string",
+    "default": "👍,😂,🥰,🤔,👀,🎉,😮,😢,🔥,✨,💯,🤝,🫡,🙏"
+  }
+}
